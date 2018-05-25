@@ -1,4 +1,5 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
+import {Row, Col} from 'react-flexbox-grid'
 
 
 class App extends Component {
@@ -20,11 +21,15 @@ class App extends Component {
             <div>
                 {this.state.users &&
                 this.state.users.results.map(random => (
-                    <div>
-                        <img src={random.picture.thumbnail} alt={"user"}/>
-                        <p>{random.email}</p>
+                    <Row middle="xs">
+                        <Col xs={6} sm={1}>
+                            <img src={random.picture.thumbnail} alt={"user"}/>
+                        </Col>
+                        <Col xs={6} sm={11}>
+                            <a href='#'>{random.email}</a>
+                        </Col>
                         <hr/>
-                    </div>
+                    </Row>
                 ))}
             </div>
         )
