@@ -1,8 +1,5 @@
 import React, {Component} from 'react';
 
-const toUpperCase = (text) => {
-    return text.charAt(0).toUpperCase() + text.slice(1);
-}
 
 class App extends Component {
 
@@ -25,9 +22,6 @@ class App extends Component {
                 this.state.users.results.map(random => (
                     <div>
                         <img src={random.picture.thumbnail} alt={"user"}/>
-                        <h3>
-                            {toUpperCase(random.name.first)} {toUpperCase(random.name.last)}
-                        </h3>
                         <p>{random.email}</p>
                         <hr/>
                     </div>
